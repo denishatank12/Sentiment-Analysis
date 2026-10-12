@@ -69,6 +69,7 @@ def make_pdf() -> None:
     if (ART / "confusion_matrix.png").exists():
         story += [Paragraph("Plot evidence", styles["Heading2"]), Image(str(ART / "confusion_matrix.png"), width=4.4*inch, height=3.0*inch), Spacer(1, 8)]
     story += [
+        PageBreak(),
         Paragraph("Technical difficulties and best practices", styles["Heading2"]),
         Paragraph("The repository imports optional visualization dependencies when its package is collected, so I installed the documented requirements in an isolated environment before testing. One test initially expected a different validation-message phrase; I corrected the test to match the intended public behavior. The final contribution uses type hints, Google-style docstrings, relative paths, a small reproducible demo, explicit validation, and no committed credentials or raw datasets.", styles["BodyText"]),
         Paragraph("Five key takeaways", styles["Heading2"]),
