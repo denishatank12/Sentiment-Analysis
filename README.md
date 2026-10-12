@@ -202,6 +202,21 @@ accuracy                             0.782    240696
 4. **Branch**: `git checkout -b feature/your-feature`
 5. **Commit**: `git commit -m "[Feature] Add BERT support"`
 
+### Three-class SVM example
+
+This repository also includes a small, reproducible TF-IDF plus linear SVM
+example that predicts `negative`, `neutral`, or `positive` sentiment without
+requiring a downloaded dataset:
+
+```bash
+python examples/three_class_svm_demo.py
+pytest tests/test_three_class_svm.py
+```
+
+The implementation is in `src/three_class_svm.py`. It validates the three
+required labels, keeps vectorization inside a scikit-learn pipeline to avoid
+train/test leakage, and exposes `fit`, `predict`, and `score` methods.
+
 ## 📦 Dependencies
 
 ```bash
